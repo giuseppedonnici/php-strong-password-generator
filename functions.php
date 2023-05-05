@@ -7,6 +7,9 @@ function generate_random_psw($length, $possible_characters)
             $number = rand(0, strlen($possible_characters));
             $password .= $possible_characters[$number];
         }
-        return $password;
+        session_start();
+        $_SESSION['password'] = $password;
+        header('Location: password.php');
+        // return $password;
     }
 }

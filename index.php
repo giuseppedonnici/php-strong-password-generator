@@ -25,7 +25,7 @@ $length = $_GET['length'];
 
 
         </form>
-        <p>La password generata è: <?php echo generate_random_psw($length, $possible_characters) ?></p>
+        <?php echo generate_random_psw($length, $possible_characters) ?>
     </div>
     
 </body>
