@@ -1,15 +1,9 @@
 <?php 
 $possible_characters = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789[*.!@#$%^&(){}[]:;<>,.?/~_+-=|\]";
 
+include __DIR__ . '/functions.php';
+
 $length = $_GET['length'];
-
-if($length && is_numeric($length)) {
-    for($i = 0; $i < $length; $i++) {
-        $number = rand(0, strlen($possible_characters));
-        $password .= $possible_characters[$number];
-    }
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +25,7 @@ if($length && is_numeric($length)) {
 
 
         </form>
-        <p>La password generata è: <?php echo $password ?></p>
+        <p>La password generata è: <?php echo generate_random_psw($length, $possible_characters) ?></p>
     </div>
     
 </body>
